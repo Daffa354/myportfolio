@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daffa Alif Anhar Firdaus | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            DAFFA.
+        </div>
+
+        <div class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                HELLO, I AM
+            </p>
+
+            <h1>
+                Daffa Alif<br>
+                Anhar Firdaus
+            </h1>
+
+            <p class="hero-description">
+                Network Enthusiast & Creative Designer
+            </p>
+
+            <a href="#projects" class="hero-button">
+                Lihat Project
+            </a>
+
+        </div>
+
+<div class="hero-decoration">
+    <div class="glow"></div>
+
+    <img
+        src="{{ url_for('static', filename='foto.png') }}"
+        alt="Foto Daffa"
+        class="profile-photo"
+    >
+</div>
+        
+
+    </section>
+
+<section id="about" class="section about-section">
+
+    <div class="about-header">
+        <p class="section-label">
+            ABOUT ME
+        </p>
+
+        <h2>
+            Sedikit Tentang Saya
+        </h2>
+    </div>
+
+
+    <div class="about-container">
+
+        <div class="about-content">
+
+            <p class="about-intro">
+                Halo, saya Daffa.
+            </p>
+
+            <p class="about-text">
+                Saya adalah siswa jurusan Teknik Jaringan Komputer dan
+                Telekomunikasi (TJKT) yang tertarik pada dunia jaringan,
+                teknologi, dan desain digital.
+            </p>
+
+            <p class="about-text">
+                Saya senang belajar hal baru, mencoba membuat project,
+                dan mengembangkan kemampuan saya di bidang teknologi
+                maupun desain.
+            </p>
+
+        </div>
+
+
+        <div class="about-info">
+
+            <div class="info-card">
+                <span class="info-label">STATUS</span>
+                <h3>Siswa SMK PGRI 1 TANGERANG</h3>
+                <p>TJKT(Teknik jaringan komputer telekomunikasi)</p>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">FOCUS</span>
+                <h3>Networking</h3>
+                <p>Network & Technology</p>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">INTEREST</span>
+                <h3>Creative</h3>
+                <p>Design & Digital</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+
+        <p class="section-label">
+            TECH STACK
+        </p>
+
+        <h2>
+            Keahlian
+        </h2>
+<div class="skills-grid">
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/mikrotik" alt="MikroTik">
+        </div>
+        <p>MikroTik</p>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/cisco" alt="Cisco">
+        </div>
+        <p>Cisco Packet Tracer</p>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/linux" alt="Linux">
+        </div>
+        <p>Linux</p>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/python" alt="Python">
+        </div>
+        <p>Python</p>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/html5" alt="HTML">
+        </div>
+        <p>HTML</p>
+    </div>
+
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/css" alt="CSS">
+        </div>
+        <p>CSS</p>
+    </div>
+
+    <div class="skill-card">
+    <div class="skill-icon canva-logo">
+        C
+    </div>
+    <p>Canva</p>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon capcut-logo">
+        ✂
+    </div>
+    <p>CapCut</p>
+</div>
+
+<div class="skill-card">
+    <div class="skill-icon vscode-logo">
+        &lt;/&gt;
+    </div>
+    <p>Visual Studio Code</p>
+</div>
+    <div class="skill-card">
+        <div class="skill-icon">
+            <img src="https://cdn.simpleicons.org/railway" alt="Railway">
+        </div>
+        <p>Railway</p>
+    </div>
+
+</div>
+        
+    </section>
+
+
+    <!-- PROJECT -->
+    <section id="projects" class="section">
+
+        <p class="section-label">
+            PROJECT
+        </p>
+
+        <h2>
+            Project Saya
+        </h2>
+
+        <div class="project-card">
+
+            <div class="project-image">
+    <img src="{{ url_for('static', filename='memori.jpeg') }}" alt="Memori Digital">
+</div>
+
+            <div class="project-info">
+
+                <p class="project-category">
+                    WEBSITE
+                </p>
+
+                <h3>
+                    Memori Digital
+                </h3>
+
+                <p>
+                    Website digital memory album bertema Gunung Ciremai
+                    untuk menyimpan dan menampilkan dokumentasi perjalanan, lihat project-bikin akun-isi username dan password bebas-login
+                    
+                </p>
+
+                <a href="https://ciremaimemori-production.up.railway.app/" 
+   class="project-button" 
+   target="_blank">
+                    Lihat Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="section">
+
+        <p class="section-label">
+            CERTIFICATES
+        </p>
+
+        <h2>
+            Sertifikat
+        </h2>
+
+       <div class="certificate-card">
+
+    <div class="certificate-icon">
+        MTCNA
+    </div>
+
+    <div>
+        <h3>
+            MikroTik Certified Network Associate
+        </h3>
+
+        <p>
+            STANDAR INTERNASIONAL
+        </p>
+
+        <a href="https://mikrotik.com/training/certificates/c723519c1ebe3d810348"
+           class="certificate-button"
+           target="_blank">
+            View Sertifikat →
+        </a>
+    </div>
+
+</div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+
+        <p class="section-label">
+            CONTACT
+        </p>
+
+        <h2>
+            Mari Terhubung
+        </h2>
+
+        <p>
+            Saya selalu terbuka untuk proyek baru atau sekadar obrolan,:
+        </p>
+      <div class="contact-list"> <a href="https://www.instagram.com/daffafrdus21_/" target="_blank"> Instagram </a> <a href="https://www.linkedin.com/in/daffa-alif-anhar-firdaus-531a47346/" target="_blank"> LinkedIn </a> <a href="https://github.com/Daffa354" target="_blank"> GitHub </a> <a href="#"> WhatsApp </a> </div>
+        
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 Daffa Alif Anhar Firdaus
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
