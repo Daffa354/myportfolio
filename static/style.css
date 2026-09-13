@@ -938,3 +938,14 @@ footer {
 
     border-radius: 12px;
 }
+/* LOGO VERCEL */
+
+.vercel-logo {
+    background: #ffffff;
+    color: #000000;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    border-radius: 12px;
+}
