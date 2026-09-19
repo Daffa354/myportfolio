@@ -55,7 +55,6 @@ body {
     color: #cfcfcf;
     text-decoration: none;
     font-size: 14px;
-
     transition: 0.3s;
 }
 
@@ -82,51 +81,81 @@ body {
 
     background:
         radial-gradient(
-            circle at 80% 30%,
-            rgba(61, 255, 110, 0.12),
+            circle at 75% 45%,
+            rgba(125, 255, 155, 0.10),
             transparent 30%
         ),
         radial-gradient(
-            circle at 20% 80%,
-            rgba(0, 160, 255, 0.08),
+            circle at 10% 80%,
+            rgba(0, 160, 255, 0.06),
             transparent 30%
         );
 }
 
 .hero-content {
-    max-width: 650px;
+    max-width: 700px;
 
     position: relative;
-    z-index: 2;
+    z-index: 5;
 }
 
 .hero-label {
     color: #7dff9b;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 80px);
+    font-size: clamp(48px, 7vw, 86px);
 
-    line-height: 1.05;
+    line-height: 0.98;
+
+    letter-spacing: -3px;
 
     margin-bottom: 25px;
+}
 
-    letter-spacing: -2px;
+.hero h1 span {
+    color: #7dff9b;
 }
 
 .hero-description {
-    color: #a8aaa9;
+    color: #d5d8d6;
 
-    font-size: 19px;
+    font-size: 18px;
 
-    margin-bottom: 35px;
+    margin-bottom: 15px;
+}
+
+.hero-description span {
+    color: #7dff9b;
+
+    margin: 0 7px;
+}
+
+.hero-text {
+    max-width: 500px;
+
+    color: #858b88;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
 }
 
 .hero-button {
@@ -140,29 +169,54 @@ body {
     border-radius: 10px;
 
     text-decoration: none;
+
     font-weight: bold;
 
-    box-shadow:
-        0 10px 30px rgba(125, 255, 155, 0.15);
-
     transition: 0.3s;
+
+    box-shadow:
+        0 10px 30px rgba(125, 255, 155, 0.12);
 }
 
 .hero-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
     box-shadow:
         0 15px 40px rgba(125, 255, 155, 0.25);
 }
 
+.hero-button-outline {
+    display: inline-block;
+
+    padding: 12px 23px;
+
+    border: 1px solid rgba(125, 255, 155, 0.35);
+
+    color: #7dff9b;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-button-outline:hover {
+    background: rgba(125, 255, 155, 0.08);
+
+    transform: translateY(-4px);
+}
+
 
 /* =========================
-   FOTO
+   FOTO HERO
 ========================= */
 
 .hero-decoration {
-    width: 380px;
-    height: 380px;
+    width: 430px;
+    height: 430px;
 
     position: relative;
 
@@ -171,26 +225,60 @@ body {
     justify-content: center;
 }
 
+.hero-circle {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border: 1px solid rgba(125, 255, 155, 0.18);
+
+    border-radius: 50%;
+
+    animation:
+        rotateCircle 18s linear infinite;
+}
+
+.hero-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    background: #7dff9b;
+
+    border-radius: 50%;
+
+    top: 18px;
+    left: 50%;
+
+    box-shadow:
+        0 0 20px #7dff9b;
+}
+
 .glow {
     position: absolute;
 
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
 
     background: #7dff9b;
 
     filter: blur(100px);
 
-    opacity: 0.12;
+    opacity: 0.13;
 }
 
 .profile-photo {
-    width: 280px;
+    width: 310px;
     height: auto;
 
     object-fit: contain;
 
     position: relative;
+
     z-index: 2;
 
     animation:
@@ -199,30 +287,119 @@ body {
 }
 
 
-/* ANIMASI MASUK */
+/* =========================
+   HERO TAG
+========================= */
+
+.hero-tag {
+    position: absolute;
+
+    z-index: 4;
+
+    padding: 8px 13px;
+
+    background: rgba(10, 17, 15, 0.85);
+
+    border: 1px solid rgba(125, 255, 155, 0.2);
+
+    border-radius: 8px;
+
+    color: #7dff9b;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tag-1 {
+    top: 70px;
+    right: 15px;
+
+    animation:
+        tagFloat 4s ease-in-out infinite;
+}
+
+.hero-tag-2 {
+    bottom: 80px;
+    left: 5px;
+
+    animation:
+        tagFloat 4s ease-in-out 1s infinite;
+}
+
+.hero-tag-3 {
+    top: 190px;
+    right: -15px;
+
+    animation:
+        tagFloat 4s ease-in-out 2s infinite;
+}
+
+
+/* =========================
+   ANIMASI HERO
+========================= */
+
+@keyframes rotateCircle {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes tagFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+}
 
 @keyframes photoEnter {
 
     from {
         opacity: 0;
-        transform: translateY(60px) scale(0.92);
+
+        transform:
+            translateY(60px)
+            scale(0.92);
+
         filter: blur(8px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
+
         filter: blur(0);
     }
 
 }
 
-
-/* ANIMASI MELAYANG */
-
 @keyframes photoFloat {
 
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -279,7 +456,8 @@ body {
 .about-container {
     display: grid;
 
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns:
+        1.2fr 0.8fr;
 
     gap: 50px;
 
@@ -330,7 +508,8 @@ body {
             rgba(14, 19, 16, 0.95)
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
 
     border-radius: 16px;
 
@@ -414,7 +593,8 @@ body {
             #0f1411
         );
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
 
     border-radius: 16px;
 
@@ -494,6 +674,36 @@ body {
     border-radius: 12px;
 }
 
+
+/* LOGO CAPCUT */
+
+.capcut-logo {
+    background: #ffffff;
+
+    color: #000000;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    border-radius: 12px;
+}
+
+
+/* LOGO VERCEL */
+
+.vercel-logo {
+    background: #ffffff;
+
+    color: #000000;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    border-radius: 12px;
+}
+
 .skill-card p {
     color: #ddd;
 
@@ -526,7 +736,8 @@ body {
 
     border-radius: 20px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
 
     box-shadow:
         0 25px 60px rgba(0, 0, 0, 0.35);
@@ -633,7 +844,8 @@ body {
 
     border-radius: 16px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.3);
@@ -714,9 +926,6 @@ body {
     margin-bottom: 30px;
 }
 
-
-/* TULISAN CONTACT TIDAK FLAT */
-
 .contact-list {
     display: flex;
 
@@ -748,9 +957,6 @@ body {
         0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-
-/* GARIS BAWAH */
-
 .contact-list a::after {
     content: "";
 
@@ -769,9 +975,6 @@ body {
 
     transition: 0.3s ease;
 }
-
-
-/* HOVER */
 
 .contact-list a:hover {
     color: #7dff9b;
@@ -832,13 +1035,46 @@ footer {
         gap: 60px;
     }
 
+    .hero-content {
+        max-width: 600px;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
     .hero-decoration {
         width: 300px;
         height: 300px;
     }
 
+    .hero-circle {
+        width: 250px;
+        height: 250px;
+    }
+
     .profile-photo {
         width: 230px;
+    }
+
+    .hero-tag-1 {
+        top: 30px;
+        right: -5px;
+    }
+
+    .hero-tag-2 {
+        bottom: 35px;
+        left: -5px;
+    }
+
+    .hero-tag-3 {
+        top: 125px;
+        right: -15px;
     }
 
 
@@ -913,39 +1149,19 @@ footer {
         font-size: 16px;
     }
 
-    .skills-grid {
-        grid-template-columns:
-            1fr;
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
     }
 
-    .certificate-card {
-        align-items: flex-start;
+    .hero-button,
+    .hero-button-outline {
+        width: 100%;
+
+        text-align: center;
     }
 
-    .project-info h3 {
-        font-size: 25px;
-    }
-
-}
-/* LOGO CAPCUT */
-
-.capcut-logo {
-    background: #ffffff;
-    color: #000000;
-
-    font-size: 24px;
-    font-weight: bold;
-
-    border-radius: 12px;
-}
-/* LOGO VERCEL */
-
-.vercel-logo {
-    background: #ffffff;
-    color: #000000;
-
-    font-size: 22px;
-    font-weight: bold;
-
-    border-radius: 12px;
-}
+    .hero-decoration {
+        width: 280px;
+```
