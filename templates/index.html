@@ -461,73 +461,86 @@
         <div class="comment-section">
 
             <h3>
-                Komentar <span>(0)</span>
+                Komentar <span>({{ comments|length }})</span>
             </h3>
 
             <div class="comment-form">
 
-                <input
-                    type="text"
-                    placeholder="Nama"
-                >
+                <form
+    class="comment-form"
+    action="/comment"
+    method="POST"
+>
 
-                <textarea
-                    placeholder="Komentar"
-                    rows="4"
-                ></textarea>
+    <input
+        type="text"
+        name="nama"
+        placeholder="Nama"
+        required
+    >
 
-                <div class="profile-upload">
+    <textarea
+        name="komentar"
+        placeholder="Komentar"
+        rows="4"
+        required
+    ></textarea>
 
-                    <label>
-                        Foto Profil <span>(opsional)</span>
-                    </label>
+    <div class="profile-upload">
 
-                    <input
-                        type="file"
-                        accept="image/*"
-                    >
+        <label>
+            Foto Profil <span>(opsional)</span>
+        </label>
 
-                    <small>
-                        Max file size: 5MB
-                    </small>
+        <input
+            type="file"
+            accept="image/*"
+        >
 
-                </div>
+        <small>
+            Max file size: 5MB
+        </small>
 
-                <button type="button">
-                    Kirim Komentar
-                </button>
+    </div>
 
-            </div>
+    <button type="submit">
+        Kirim Komentar
+    </button>
 
+</form>
             <div class="comment-list">
 
-                <div class="comment-item">
+    {% for comment in comments %}
 
-                    <div class="comment-avatar">
-                        D
-                    </div>
+        <div class="comment-item">
 
-                    <div class="comment-content">
+            <div class="comment-avatar">
+                {{ comment.nama[0]|upper }}
+            </div>
 
-                        <h4>
-                            HR,SUPERCITY.COM
-                        </h4>
+            <div class="comment-content">
 
-                        <small>
-                            2 bulan lalu
-                        </small>
+                <h4>
+                    {{ comment.nama }}
+                </h4>
 
-                        <p>
-                            keren banget, kamu tertarik wfh sama kami?
-                        </p>
+                <small>
+                    {{ comment.created_at.strftime('%d %B %Y, %H:%M') }}
+                </small>
 
-                    </div>
-
-                </div>
+                <p>
+                    {{ comment.komentar }}
+                </p>
 
             </div>
 
         </div>
+
+    {% endfor %}
+
+</div>
+
+                
 
 
         <!-- HUBUNGI -->
