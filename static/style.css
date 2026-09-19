@@ -1,197 +1,162 @@
 /* =========================
-   HERO
+   VARIABLES & RESET
 ========================= */
+:root {
+    --bg-dark: #07111f;
+    --accent-green: #7dff9b;
+    --text-muted: #aeb5b1;
+    --text-white: #ffffff;
+}
 
+/* =========================
+   HERO CONTAINER
+========================= */
 .hero {
     min-height: calc(100vh - 70px);
-    padding: 70px 8%;
+    padding: 60px 8%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
 
     position: relative;
     overflow: hidden;
+    background-color: var(--bg-dark);
 
-    background:
-        radial-gradient(
-            circle at 75% 50%,
-            rgba(125, 255, 155, 0.12),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(30, 100, 140, 0.10),
-            transparent 30%
-        ),
-        #07111f;
+    background-image: 
+        radial-gradient(circle at 75% 50%, rgba(125, 255, 155, 0.12), transparent 35%),
+        radial-gradient(circle at 15% 20%, rgba(30, 100, 140, 0.15), transparent 35%);
 }
-
 
 /* =========================
    HERO CONTENT
 ========================= */
-
 .hero-content {
-    max-width: 650px;
+    max-width: 620px;
     position: relative;
     z-index: 2;
 }
 
 .hero-label {
-    color: #7dff9b;
-
-    font-size: 13px;
+    color: var(--accent-green);
+    font-size: 0.85rem;
     font-weight: 700;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    color: #ffffff;
-
-    font-size: clamp(55px, 7vw, 90px);
-
-    line-height: 0.95;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 25px;
+    color: var(--text-white);
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 .hero-description {
     max-width: 520px;
-
-    color: #aeb5b1;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
     margin-bottom: 32px;
 }
 
-
 /* =========================
-   HERO BUTTON
+   HERO BUTTONS
 ========================= */
-
 .hero-buttons {
     display: flex;
-    gap: 14px;
+    gap: 16px;
+    align-items: center;
 }
 
 .hero-button,
 .hero-button-outline {
-    display: inline-block;
-
-    padding: 13px 24px;
-
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
     border-radius: 8px;
-
     text-decoration: none;
-
-    font-size: 14px;
+    font-size: 0.95rem;
     font-weight: 700;
-
-    transition: 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button {
-    background: #7dff9b;
-    color: #07111f;
-
-    box-shadow:
-        0 10px 30px rgba(125, 255, 155, 0.12);
+    background: var(--accent-green);
+    color: var(--bg-dark);
+    box-shadow: 0 8px 25px rgba(125, 255, 155, 0.15);
 }
 
 .hero-button:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 35px rgba(125, 255, 155, 0.25);
+    box-shadow: 0 12px 30px rgba(125, 255, 155, 0.3);
 }
 
 .hero-button-outline {
-    color: #7dff9b;
-
-    border:
-        1px solid rgba(125, 255, 155, 0.4);
+    color: var(--accent-green);
+    border: 1px solid rgba(125, 255, 155, 0.4);
+    background: transparent;
 }
 
 .hero-button-outline:hover {
-    background:
-        rgba(125, 255, 155, 0.08);
-
+    background: rgba(125, 255, 155, 0.08);
+    border-color: var(--accent-green);
     transform: translateY(-3px);
 }
-
 
 /* =========================
    HERO PHOTO
 ========================= */
-
 .hero-photo {
-    width: 430px;
-    height: 500px;
-
     position: relative;
-
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-
     z-index: 2;
+    width: 100%;
+    max-width: 420px;
 }
 
 .hero-photo-glow {
     position: absolute;
-
-    width: 300px;
-    height: 300px;
-
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-
-    background: #7dff9b;
-
-    filter: blur(110px);
-
-    opacity: 0.12;
+    background: var(--accent-green);
+    filter: blur(100px);
+    opacity: 0.15;
+    z-index: 1;
 }
 
 .hero-photo img {
     position: relative;
-
     z-index: 2;
-
-    width: 390px;
-    max-height: 500px;
-
+    width: 100%;
+    height: auto;
+    max-height: 480px;
     object-fit: contain;
-
-    filter:
-        drop-shadow(
-            0 25px 35px rgba(0, 0, 0, 0.45)
-        );
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
 }
-
 
 /* =========================
    RESPONSIVE HERO
 ========================= */
-
-@media (max-width: 800px) {
-
+@media (max-width: 900px) {
     .hero {
-        padding: 70px 6%;
-
+        padding: 60px 6%;
         flex-direction: column;
-
         text-align: center;
+        justify-content: center;
+        gap: 40px;
+    }
 
-        gap: 50px;
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero-description {
@@ -204,51 +169,35 @@
     }
 
     .hero-photo {
-        width: 320px;
-        height: 380px;
+        max-width: 320px;
     }
-
-    .hero-photo img {
-        width: 300px;
-        max-height: 380px;
-    }
-
 }
 
-
-@media (max-width: 500px) {
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 5%;
+    }
 
     .hero h1 {
-        font-size: 48px;
-
-        letter-spacing: -2px;
+        font-size: 38px;
+        letter-spacing: -1px;
     }
 
     .hero-description {
-        font-size: 16px;
+        font-size: 0.95rem;
     }
 
     .hero-buttons {
         flex-direction: column;
-
         width: 100%;
     }
 
     .hero-button,
     .hero-button-outline {
         width: 100%;
-
-        text-align: center;
     }
 
     .hero-photo {
-        width: 280px;
-        height: 330px;
+        max-width: 260px;
     }
-
-    .hero-photo img {
-        width: 260px;
-        max-height: 330px;
-    }
-
 }

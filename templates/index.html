@@ -1,45 +1,38 @@
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero" id="home">
+    <div class="hero-container">
+        
+        <!-- TEKS HERO -->
+        <div class="hero-content">
+            <span class="hero-badge">HELLO, I'M</span>
+            
+            <h1 class="hero-title">
+                Daffa Alif <span class="highlight">Anhar Firdaus.</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                TJKT Student &bull; Network Enthusiast &bull; Creative Designer
+            </p>
 
-    <div class="hero-content">
+            <p class="hero-description">
+                Siswa TJKT yang memiliki ketertarikan tinggi pada jaringan komputer, pengembangan teknologi, dan desain digital.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Lihat Project</a>
+                <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
 
-        <p class="hero-label">
-            HELLO, I'M
-        </p>
-
-        <h1>
-            Daffa Alif<br>
-            Anhar Firdaus.
-        </h1>
-
-        <p class="hero-description">
-            Siswa TJKT yang tertarik pada
-            jaringan komputer, teknologi, dan desain digital.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#projects" class="hero-button">
-                Lihat Project
-            </a>
-
-            <a href="#contact" class="hero-button-outline">
-                Hubungi Saya
-            </a>
-
+        <!-- FOTO HERO -->
+        <div class="hero-photo-wrapper">
+            <div class="hero-photo-glow"></div>
+            <img 
+                src="{{ url_for('static', filename='foto.png') }}" 
+                alt="Daffa Alif Anhar Firdaus" 
+                class="hero-photo"
+            >
         </div>
 
     </div>
-
-    <div class="hero-photo">
-
-        <div class="hero-photo-glow"></div>
-
-        <img
-            src="{{ url_for('static', filename='foto.png') }}"
-            alt="Daffa Alif Anhar Firdaus"
-        >
-
-    </div>
-
 </section>
