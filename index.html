@@ -7,8 +7,7 @@
 
     <title>Daffa Alif Anhar Firdaus | Portfolio</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -95,9 +94,9 @@
             <div class="hero-photo-frame">
 
                 <img
-                    src="{{ url_for('static', filename='foto.png') }}"
-                    alt="Foto Daffa"
-                    class="profile-photo"
+    src="/static/foto.png"
+    alt="Foto Daffa"
+    class="profile-photo"
                 >
 
             </div>
@@ -361,9 +360,8 @@
             <div class="project-image">
 
                 <img
-                    src="{{ url_for('static', filename='memori.png') }}"
-                    alt="Memori Digital"
-                >
+    src="/static/memori.png"
+    alt="Memori Digital">
 
             </div>
 
@@ -413,10 +411,10 @@
 
         <div class="certificate-image">
 
-            <img
-                src="{{ url_for('static', filename='sertifikat-mtcna.png') }}"
-                alt="Sertifikat MTCNA"
-            >
+           <img
+    src="/static/sertifikat-mtcna.png"
+    alt="Sertifikat MTCNA"
+>
 
         </div>
 
@@ -457,91 +455,7 @@
 
     <div class="contact-container">
 
-        <!-- KOMENTAR -->
-        <div class="comment-section">
-
-            <h3>
-                Komentar <span>({{ comments|length }})</span>
-            </h3>
-
-            <div class="comment-form">
-
-                <form
-    class="comment-form"
-    action="/comment"
-    method="POST"
->
-
-    <input
-        type="text"
-        name="nama"
-        placeholder="Nama"
-        required
-    >
-
-    <textarea
-        name="komentar"
-        placeholder="Komentar"
-        rows="4"
-        required
-    ></textarea>
-
-    <div class="profile-upload">
-
-        <label>
-            Foto Profil <span>(opsional)</span>
-        </label>
-
-        <input
-            type="file"
-            accept="image/*"
-        >
-
-        <small>
-            Max file size: 5MB
-        </small>
-
-    </div>
-
-    <button type="submit">
-        Kirim Komentar
-    </button>
-
-</form>
-            <div class="comment-list">
-
-    {% for comment in comments %}
-
-        <div class="comment-item">
-
-            <div class="comment-avatar">
-                {{ comment.nama[0]|upper }}
-            </div>
-
-            <div class="comment-content">
-
-                <h4>
-                    {{ comment.nama }}
-                </h4>
-
-                <small>
-                    {{ comment.created_at.strftime('%d %B %Y, %H:%M') }}
-                </small>
-
-                <p>
-                    {{ comment.komentar }}
-                </p>
-
-            </div>
-
-        </div>
-
-    {% endfor %}
-
-</div>
-
-                
-
+        
 
         <!-- HUBUNGI -->
         <div class="contact-info">
@@ -556,7 +470,7 @@
 
             <p>
                 Ada yang mau didiskusikan?
-                Langsung kirim pesan aja ya..!
+                Langsung kirim pesan aja ya..
             </p>
 
             <div class="contact-list">
